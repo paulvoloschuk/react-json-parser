@@ -1,0 +1,128 @@
+/* Common styles */
+*:focus {
+  outline: none;
+}
+
+.viewer {
+  padding: 20px;
+  font-size: 14px !important;
+}
+
+.viewer__error {
+  background: #fccece;
+  border: 1px solid red;
+  margin: 20px 0;
+  padding: 0 20px;
+}
+
+.viewer__error__message {
+  color: red;
+  margin: 5px 0;
+}
+
+.viewer__error__code {
+  margin: 5px 0;
+  color: gray;
+}
+.viewer__error__code span {
+  color: white;
+  background: red;
+  padding: 0 4px;
+  border-radius: 2px;
+}
+
+
+.branch__header {
+  padding: 0;
+  font-size: 14px;
+  border: none;
+  background: none;
+}
+
+.branch__arrow {
+  display: inline-block;
+  text-align: left;
+  width: 1.5em;
+}
+.branch__arrow::before {
+  content: "▶";
+}
+.branch__arrow--open::before {
+  content: "▼";
+}
+.branch__header[disabled] .branch__arrow::before {
+  content: none;
+}
+.branch__counter {
+  margin-right: .3em;
+  padding: 0 .3em;
+  font-size: 10px;
+  border-radius: 50%;
+}
+
+.branch__content {
+  padding-left: 1.5em;
+}
+.branch__name {
+  margin-right: .3em;
+}
+.branch__name::after {
+  content: ":";
+}
+
+.leaf__string {
+  word-wrap: break-word;
+  overflow: auto;
+  max-width: 8em;
+}
+.leaf__string::before,
+.leaf__string::after {
+  content: "\"";
+}
+.branch__header span.leaf:not(:last-child) {
+  margin-right: .3em;
+}
+
+/* dark theme */
+.theme--dark.viewer {
+  background-color: #1f2638;
+}
+.theme--dark .branch__header,
+.theme--dark .branch__footer {
+  color: gray;
+}
+.theme--dark .branch__name {
+  color: #8f58c1;
+}
+.theme--dark .leaf__number {
+  color: #ff904a;
+}
+.theme--dark .leaf__string {
+  color: #10a81a;
+}
+.theme--dark .branch__counter {
+  color: white;
+  background-color: rgb(164, 56, 147);
+}
+
+/* light theme */
+.theme--light.viewer {
+  background-color: white;
+}
+.theme--light .branch__header,
+.theme--light .branch__footer {
+  color: #292b34;
+}
+.theme--light .branch__name {
+  color: #184c7d;
+}
+.theme--light .leaf__number {
+  color: #d1946e;
+}
+.theme--light .leaf__string {
+  color: #4b987e;
+}
+.theme--light .branch__counter {
+  color: white;
+  background-color: rgb(164, 95, 56);
+}
